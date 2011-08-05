@@ -1,0 +1,18 @@
+#N canvas 0 25 1272 692 10;
+#X obj 278 120 inlet;
+#X obj 198 500 outlet~;
+#X obj 84 114 inlet~;
+#X obj 114 504 outlet~;
+#X obj 112 379 freqshift~;
+#X obj 295 160 random 200;
+#X obj 295 188 t b a;
+#X obj 279 214 sssad/sssad freqshift;
+#X obj 152 112 inlet~;
+#X connect 0 0 5 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 4 1 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 1 7 1;
+#X connect 7 0 4 1;
