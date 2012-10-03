@@ -1,0 +1,35 @@
+#N canvas 1 82 1364 661 10;
+#X obj 517 48 loadbang;
+#X text 522 307 Right outlet outputs the current pattern on every modification
+;
+#X msg 514 409 3 1 11 0 5 1 9 0 8 1 3 1 9 0 3 0 6 0 6 2 3 1 0 0 12
+2 12 2 0 1 5 1;
+#X floatatom 238 165 5 0 0 0 - - -;
+#X obj 513 383 cyclone/prepend set;
+#X text 23 40 tags: sequencing;
+#X obj 239 95 loadbang;
+#X obj 240 117 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 225 441 mtl/beep~ /id beep;
+#X obj 237 514 dac~;
+#X obj 348 14 mtl/clkMaster 120;
+#X obj 238 139 mtl/clkSlave 2 16;
+#X text 12 23 Description: An 16 step beat sequencer.;
+#X text 153 375 Octave ->;
+#X text 156 288 Notes ->;
+#X obj 465 156 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 473 184 ptl/random-seq1x16-midi;
+#X obj 218 255 mtl/seq1x16-midi;
+#X connect 0 0 16 0;
+#X connect 3 0 17 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 11 0;
+#X connect 8 0 9 0;
+#X connect 8 0 9 1;
+#X connect 11 0 3 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 1;
+#X connect 17 0 8 0;
+#X connect 17 1 4 0;

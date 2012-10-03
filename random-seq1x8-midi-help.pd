@@ -1,0 +1,34 @@
+#N canvas 1 82 1364 661 10;
+#X obj 435 86 loadbang;
+#X text 522 307 Right outlet outputs the current pattern on every modification
+;
+#X msg 514 409 3 1 8 0 12 0 8 0 9 1 12 0 2 1 11 1;
+#X floatatom 238 165 5 0 0 0 - - -;
+#X obj 513 383 cyclone/prepend set;
+#X text 23 40 tags: sequencing;
+#X obj 239 95 loadbang;
+#X obj 240 117 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 238 139 mtl/clkSlave 2 8;
+#X obj 225 441 mtl/beep~ /id beep;
+#X obj 237 514 dac~;
+#X obj 348 14 mtl/clkMaster 120;
+#X text 159 383 Octave ->;
+#X text 162 296 Notes ->;
+#X obj 375 192 random-seq1x8-midi;
+#X obj 363 115 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 12 23 Description: Pseudo Random Pattern Generator.;
+#X obj 218 255 mtl/seq1x8-midi;
+#X connect 0 0 14 0;
+#X connect 3 0 17 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 3 0;
+#X connect 9 0 10 0;
+#X connect 9 0 10 1;
+#X connect 14 0 17 1;
+#X connect 15 0 14 0;
+#X connect 17 0 9 0;
+#X connect 17 1 4 0;
